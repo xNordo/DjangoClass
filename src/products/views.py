@@ -40,8 +40,9 @@ def product_detail_view(request):
 	# }
 	return render(request, "product/detail.html", {"object": obj})
 
+
 def render_initial_data(request):
-	#initial_values = {'title': 'initial title'}
+	# initial_values = {'title': 'initial title'}
 	obj = Product.objects.get(id='1')
 	form = ProductForm(request.POST or None, instance=obj)
 	if form.is_valid():
